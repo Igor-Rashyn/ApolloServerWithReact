@@ -7,6 +7,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import SongList from './components/SongList';
 import App from './components/App';
+import SongCreate from './components/SongCreate';
 
  
 
@@ -20,7 +21,8 @@ const Root = () => {
     <ApolloProvider client={client}>
       <Router history={hashHistory}>
         <Route path="/" component={App}> 
-          <IndexRoute component={SongList}/> 
+          <IndexRoute component={SongList}/>
+          <Route path="song/new" component={SongCreate}/> 
         </Route>
         <Route path="/" component={App}> </Route>
       </Router>
