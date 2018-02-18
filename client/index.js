@@ -1,3 +1,4 @@
+import './style/style.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Router, hashHistory, IndexRoute } from 'react-router';
@@ -8,6 +9,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import SongList from './components/SongList';
 import App from './components/App';
 import SongCreate from './components/SongCreate';
+import SongDetail from './components/SongDetail';
 
  
 
@@ -23,6 +25,7 @@ const Root = () => {
         <Route path="/" component={App}> 
           <IndexRoute component={SongList}/>
           <Route path="songs/new" component={SongCreate}/> 
+          <Route path="songs/:id" component={SongDetail}/> 
         </Route>
         <Route path="/" component={App}> </Route>
       </Router>
