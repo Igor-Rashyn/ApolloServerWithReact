@@ -14,6 +14,7 @@ import SongDetail from './components/SongDetail';
  
 
 const client = new ApolloClient({
+  dataIdFromObject: o => o.id,
   link: new HttpLink(),
   cache: new InMemoryCache()
 });

@@ -10,6 +10,9 @@ class LyricCreate extends Component {
         this.state = { content: '' };
     }
 
+    componentWillMount(){
+    }
+
     onSubmit(event) {
         event.preventDefault();
         this.props.mutate({
@@ -18,7 +21,9 @@ class LyricCreate extends Component {
               songId: this.props.songId
             }
         })
-        .then(() => this.setState({ content: '' }))
+        .then(() => {
+            this.setState({ content: '' })
+        })
         .catch(() => console.log('Error: Lyric creating'));
     }
     
@@ -41,6 +46,7 @@ const mutation = gql`
         addLyricToSong(content: $content, songId: $songId){
             id
             lyrics{
+              id
               content
             }
         }
