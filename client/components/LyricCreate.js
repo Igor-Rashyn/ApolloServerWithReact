@@ -11,6 +11,7 @@ class LyricCreate extends Component {
     }
 
     componentWillMount(){
+      console.log(this.props);
     }
 
     onSubmit(event) {
@@ -48,6 +49,7 @@ const mutation = gql`
             lyrics{
               id
               content
+              likes
             }
         }
     }
